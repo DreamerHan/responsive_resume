@@ -1,0 +1,169 @@
+/* --------------- xs尺寸样式 -------------- */
+@size:2;
+
+.col(13, 13);
+
+.box_bj{
+    background:url(../images/bj_circularone.png) no-repeat center top,
+                url(../images/bj_bottom.png) no-repeat center bottom,
+                #1f2229;
+
+    background-size:100%; //使得合适的作为背景覆盖
+}
+.nav{
+    height:86px / @size;
+    border-bottom:2px / @size solid #16161a;
+    h1{
+        display:none;
+    }
+    .arrow{
+        font-size:0; //隐藏【箭头】字体
+        background:url(../images/icon.png) no-repeat;
+        background-size:400px / @size; //处理size缩放导致图片要整体缩放显示
+        display:inline-block;
+        width:38px / @size;
+        height:40px / @size;
+        margin:20px / @size 0 0 24px / @size;
+        display:none; //首屏不存在返回箭头，直接先隐藏
+    }
+}
+.container{
+    padding:0 50px / @size;
+}
+.self_bj{
+    background:rgba(0,0,0,.2);
+}
+.self_pic{
+    padding-bottom:40px / @size;
+
+    .self_pic_box{
+        box-sizing: border-box;
+        padding:53px / @size 0 0 24px / @size;
+        
+        img{
+            width:200px / @size;
+            height:200px / @size;
+            border-radius: 50%;
+            overflow:hidden;
+            border:3px / @size solid #e16b5f;
+        }
+    }
+
+    figcaption{
+        h1{
+            font-size:48px / @size;
+            color:#fff;
+            font-weight: bold;
+            line-height:78px / @size;
+            padding-left:24px / @size;
+            padding-top:81px / @size;
+            span{
+                display: block;
+                font-size:30px / @size;
+                line-height:58px / @size;
+                color:#e16b5f;
+                font-weight: normal;
+            }
+        }
+    }
+}
+.self_sign{
+    background: url(../images/triangle.png) no-repeat;
+    background-size:100% 100%;
+    font-size:24px / @size;
+    line-height:40px / @size;
+    color:#c5cbd0;
+    padding:42px/@size 34px/@size 30px / @size 69px/@size;
+    position: relative;
+
+    &:before, &:after{
+        content: '';
+        width: 26px / @size;
+        height: 26px / @size;
+        background:url(../images/icon.png) no-repeat -38px/@size 0;
+        background-size:400px / @size;
+        position:absolute;
+        left:27px / @size;
+        top: 46px / @size;
+    }
+
+    &:after{
+        background-position: -64px / @size 0;
+        position: static;
+        display: inline-block;
+        vertical-align: top;
+        margin-top:9px / @size;
+        margin-left:10px / @size;
+    }
+}
+.self_message{
+    padding-top:38px / @size;
+
+    .self_list{
+
+        li{
+            position: relative;
+            font-size:28px / @size;
+            line-height:73px / @size;
+
+            span{
+                position:absolute;
+                left:0; top:0;
+                width:132px / @size;
+                color:#8d8e8f;
+                text-align: right;
+                padding-right:18px / @size;
+                box-sizing: border-box;
+                // 点球是相对于span对齐的，所以作为span的伪类处理
+                &:after{
+                    content : '';
+                    position:absolute;
+                    width:18px / @size;
+                    height:18px / @size;
+                    background:#754978;
+                    border-radius: 50%;
+                    top:28px / @size;
+                    right:-10px / @size;
+                    z-index:2;
+                }
+                
+            }
+            p{
+                margin-left:132px / @size;
+                color:#c5cbd0;
+                line-height:48px / @size;
+                padding:(73px - 48px) / @size / 2 0; //处理Li设置了整体行高比p行高大导致span内容和p不对齐的问题
+                padding-left:22px / @size;
+                //虚线是作为背景存在的
+                background:url(../images/context_center.png) repeat-y;
+                
+                a{
+                    color:#c5cbd0;
+                }
+            }
+            // 处理上面的p的第一个和最后一个背景突出的问题
+            &:first-of-type, &:last-of-type{
+                p{
+                    background: none;
+                    position:relative;
+                    &:before{
+                        content : '';
+                        position:absolute;
+                        left : 0;
+                        bottom:0;
+                        width : 2px;
+                        height:50%;
+                        background:url(../images/context_center.png) repeat-y;
+                    }
+                }
+            }
+            &:last-of-type{
+                p:before{
+                    height:26px / @size; //解决最后一个p因为内容过高导致50%的长度又超出了点球的定位高度，所以给一个固定高
+                    top:0;
+                }
+            }
+        }
+
+    }
+}

@@ -1,0 +1,44 @@
+/* --------------- lg尺寸样式 -------------- */
+@media all and (min-width:1180px) {
+    .container{
+        width:1180px;
+    }
+    //分成59份
+    .col(59, 59, lg);
+    .col-push(59, lg, 59);
+
+    .nav{
+        border-bottom:1px solid #37303b;
+    }
+    .self_pic{
+    
+        .self_pic_box{
+            
+            img{
+                margin-left:13px;
+            }
+        }
+    }
+    .self_sign{        
+        padding:0 87px 0 25px;
+    }
+    .self_message{
+    
+        .self_list{
+    
+            li{    
+                span{
+                    width:134px;
+                }
+                p{
+                    margin-left:134px;
+                    line-height:30px;
+                    padding:0; //处理Li设置了整体行高比p行高大导致span内容和p不对齐的问题
+                    padding-left:12px;
+                }
+                
+            }
+    
+        }
+    }
+}

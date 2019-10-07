@@ -1,0 +1,140 @@
+/* --------------- md尺寸样式 -------------- */
+@media all and (min-width:960px) {
+    @size : 1;
+    .container{
+        width : 960px;
+        margin:0 auto;
+        padding:0;
+    }
+
+    .md-hidden{
+        display: none;
+    }
+
+    .col(32, 32, md);
+    .col-push(32, md, 32);
+
+    .self_bj{
+        padding-bottom:50px;
+    }
+    .nav{
+        height:99px;
+        border-bottom:1px solid #322f38;
+
+        h1{
+            display:block;
+            color:#fff;
+            font-size:36px;
+            line-height:99px;
+
+            span{
+                font-size:16px;
+                line-height:82px;
+                display: inline-block;
+                vertical-align: top;
+                padding:17px 0 0 55px;
+                color:#e16b5f;
+                font-family: "微软雅黑";
+
+            }
+        }
+    }
+
+    .self_pic{
+        padding-bottom:0;
+    
+        .self_pic_box{
+            box-sizing: border-box;
+            padding:0;
+            img{
+                margin-top:72px;
+                margin-left:3px;
+            }
+        }
+    
+        figcaption{
+            h1{
+                font-size:48px / @size;
+                color:#fff;
+                font-weight: bold;
+                line-height:78px / @size;
+                padding-left:24px / @size;
+                padding-top:81px / @size;
+                span{
+                    display: block;
+                    font-size:30px / @size;
+                    line-height:58px / @size;
+                    color:#e16b5f;
+                    font-weight: normal;
+                }
+            }
+        }
+    }
+
+    .self_sign{
+        background: none;
+        font-size:14px;
+        line-height:24px;
+        margin-top:151px;
+        padding:0 27px 0 25px;
+        box-sizing: border-box;
+    
+        &:before, &:after{
+            content: '';
+            width: 16px;
+            height: 15px;
+            // 由于背景图实际大小是26，用的时候是16，所以需要做比例缩放
+            background:url(../images/icon.png) no-repeat -38px*(16/26) 0;
+            background-size:400px *(16/26);
+            position:absolute;
+            left:0px;
+            top: 3px;
+        }
+    
+        &:after{
+            position:static;
+            background-position: -64px*(16/26)  0;
+            margin-top:4px;
+            margin-left:7px;
+        }
+    }
+
+    .self_message{
+        padding-top:66px / @size;
+    
+        .self_list{
+    
+            li{
+                font-size:14px;
+                line-height:30px;
+    
+                span{
+                    width:78px;
+                    padding-right:11px;
+                    // 点球是相对于span对齐的，所以作为span的伪类处理
+                    &:after{
+                        width:7px;
+                        height:7px;
+                        top:11px;
+                        right:-4px;
+                        z-index:2;
+                    }
+                    
+                }
+                p{
+                    margin-left:78px;
+                    line-height:24px;
+                    padding:(30px - 24px) / 2 0; //处理Li设置了整体行高比p行高大导致span内容和p不对齐的问题
+                    padding-left:12px;
+                }
+                &:last-of-type{
+                    p:before{
+                        height:12px / @size; //解决最后一个p因为内容过高导致50%的长度又超出了点球的定位高度，所以给一个固定高
+                        top:0;
+                    }
+                }
+            }
+    
+        }
+    }
+}
