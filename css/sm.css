@@ -1,0 +1,152 @@
+/* --------------- ms尺寸样式 -------------- */
+@media all and (min-width: 768px) {
+  .nav {
+    height: 86px;
+    border-bottom: 2px solid #16161a;
+  }
+  .nav h1 {
+    display: none;
+  }
+  .nav .arrow {
+    width: 38px;
+    height: 40px;
+    margin: 20px 0 0 24px;
+  }
+  .container {
+    padding: 0 50px;
+  }
+  .self_pic {
+    padding-bottom: 40px;
+  }
+  .self_pic .self_pic_box {
+    padding: 53px 0 0 24px;
+  }
+  .self_pic .self_pic_box img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 3px solid #e16b5f;
+  }
+  .self_pic figcaption h1 {
+    font-size: 48px;
+    padding-left: 24px;
+    padding-top: 81px;
+    line-height: 78px;
+  }
+  .self_pic figcaption h1 span {
+    display: block;
+    font-size: 32px;
+    line-height: 61px;
+  }
+  .self_sign {
+    font-size: 26px;
+    line-height: 40px;
+    padding: 42px 34px 30px 69px;
+  }
+  .self_sign:before,
+  .self_sign:after {
+    width: 26px;
+    height: 26px;
+    background: url(../images/icon.png) no-repeat -38px 0;
+    background-size: 400px;
+    left: 27px;
+    top: 46px;
+  }
+  .self_sign:after {
+    background-position: -64px 0;
+    margin-top: 9px;
+    margin-left: 52px;
+  }
+  .self_message {
+    padding-top: 38px;
+  }
+  .self_message .self_list li {
+    font-size: 28px;
+    line-height: 73px;
+  }
+  .self_message .self_list li span {
+    width: 132px;
+    padding-right: 18px;
+  }
+  .self_message .self_list li span:after {
+    width: 18px;
+    height: 18px;
+    top: 28px;
+    right: -10px;
+    z-index: 2;
+  }
+  .self_message .self_list li p {
+    margin-left: 132px;
+    line-height: 48px;
+    padding: 12.5px 0;
+    padding-left: 22px;
+  }
+  .self_message .self_list li:last-of-type p:before {
+    height: 26px;
+  }
+  .concat a {
+    font-size: 28px;
+    line-height: 118px;
+  }
+  .concat a:first-of-type:before,
+  .concat a:last-of-type:before {
+    width: 60px;
+    height: 60px;
+    background: url(../images/icon.png) no-repeat 0 -40px;
+    background-size: 400px;
+    margin: 31px 20px 0 13px;
+  }
+  .concat a:first-of-type {
+    padding-right: 64px;
+  }
+  .concat a:last-of-type:before {
+    background-position: -60px -40px;
+  }
+  .skill_bg {
+    padding-top: 50px;
+    padding-bottom: 70px;
+  }
+  .skill_bg .title h2 {
+    font-size: 48px;
+    line-height: 67px;
+  }
+  .skill_bg .title h4 {
+    font-size: 26px;
+    line-height: 45px;
+  }
+  .skill_bg .skill_list {
+    padding-top: 2px;
+  }
+  .skill_bg .skill_list li {
+    height: 70px;
+    line-height: 70px;
+    margin-top: 40px;
+  }
+  .skill_bg .skill_list li > span {
+    width: 110px;
+    height: 70px;
+    font-size: 36px;
+  }
+  .skill_bg .skill_list li p {
+    margin-left: 110px;
+    height: 70px;
+  }
+  .skill_bg .skill_list li p span {
+    font-size: 36px;
+    padding-left: 17px;
+  }
+  .skill_bg .skill_list li p em {
+    height: 70px;
+  }
+  .work_line {
+    padding-top: 51px;
+  }
+  .work_line .title h2 {
+    font-size: 50px;
+    line-height: 66px;
+  }
+  .work_line .title h4 {
+    font-size: 26px;
+    line-height: 43px;
+  }
+}

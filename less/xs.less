@@ -287,3 +287,100 @@
         }
     }
 }
+.work_list{
+    padding-top:46px / @size;
+    padding-left:29px / @size;
+
+    li{
+        h2{
+            font-family : "微软雅黑";
+            color:#e26e60;
+            height:72px / @size;
+            border-bottom:2px / @size solid #e26c60;
+            border-left:2px / @size solid #e26c60;
+            position: relative;
+
+            &:before, &:after{
+                content : '';
+                position: absolute;
+                width:12px / @size; height:12px / @size;
+                background: #e26c60;
+                border-radius: 50%;
+                
+            }
+            &:before{
+                left:-7px / @size;
+                top:-6px / @size;
+            }
+            &:after{
+                right:0; bottom:-7px/@size; 
+            }
+
+            span{
+                &:first-of-type{
+                    font-size:24px / @size;
+                    float:left;
+                    line-height:56px / @size;
+                    padding-top:16px / @size;
+                    text-indent: 52px / @size;
+                }
+                &:last-of-type{
+                    font-size:30px / @size;
+                    float:right;
+                    line-height:62px / @size;
+                    padding-top:10px / @size;
+                    padding-right:30px / @size;
+                }
+            }
+
+            em{
+                float:left;
+                background:#fff;
+                margin-left:-42px / @size;
+                margin-top:34px / @size;
+                padding:8px / @size;
+                border:2px / @size solid transparent;
+                border-top:2px / @size solid #e26c60;
+                transform: rotate(45deg);
+                border-radius: 50%;
+                &:before{
+                    content : "";
+                    float:left;
+                    width:60px / @size;
+                    height:60px / @size;
+                    background:url(../images/icon.png) no-repeat 0 -254px/@size;
+                    background-size:400px / @size;
+                }
+            }
+        }
+    }
+}
+
+.content{
+    padding-left:37px / @size;
+    border-left:2px / @size solid #985a99;
+
+    h4{
+        font-size:32px / @size;
+        color:#464646;
+        line-height:65px / @size;
+        padding-top:11px / @size;
+        position: relative;
+
+        &:before{
+            content : "";
+            position: absolute;
+            width:12px / @size;
+            height:12px / @size;
+            background:#985a99;
+            border-radius:50%;
+            left:-44px / @size;
+            top:37px / @size;
+        }
+    }
+    p{
+        color:#999;
+        font-size:26px / @size;
+        line-height:48px / @size;
+    }
+}
