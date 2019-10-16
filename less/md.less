@@ -10,10 +10,18 @@
     .md-hidden{
         display: none;
     }
-
+    .md-show{
+        display: block;;
+    }
     .col(32, 32, md);
     .col-push(32, md, 32);
 
+    .box_bj{
+        background:url(../images/big_bj.png) no-repeat center top,
+                    #1f2229;
+    
+        background-size:100%; //使得合适的作为背景覆盖
+    }
     .self_bj{
         padding-bottom:50px;
     }
@@ -135,6 +143,80 @@
                 }
             }
     
+        }
+    }
+
+    .concat{
+        float:right;
+        padding-right:13px;
+        margin-top:8px;
+        a{
+            font-size:14px;
+            line-height:90px;
+    
+            &:first-of-type:before, &:last-of-type:before{
+                width:30px;
+                height:30px;
+                background: url(../images/icon.png) no-repeat 0 -40px/2;
+                background-size:400px / 2;
+                margin:31px 8px 0 34px;
+            }
+            
+            &:first-of-type{
+                padding-right:35px;
+            }
+    
+            &:last-of-type:before{
+                background-position: -60px/2 -40px/2;
+            }
+        }
+    }
+
+    .skill_bg{
+        padding-top:36px;
+        padding-bottom:59px;
+    }
+    
+    .skill_bg{
+    
+        .title {
+            h2{
+                font-size:36px;
+                line-height:46px;
+            }
+            h4{
+                font-size:16px;
+                line-height:28px;
+            }
+        }
+    
+        .skill_list{
+            padding-top:23px;
+    
+            li{
+                height: 40px;
+                line-height:40px;
+                margin-top:19px;
+                position: relative;
+                >span{
+                    width:59px;
+                    height:40px;
+                    font-size:20px;
+                }
+    
+                p{
+                    margin-left:59px;
+                    height:40px;
+                    span{
+                        font-size:20px;
+                        padding-left:10px;
+                    }
+                    
+                    em{
+                        height:40px; 
+                    }   
+                }    
+            }
         }
     }
 }

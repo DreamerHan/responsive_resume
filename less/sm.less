@@ -107,4 +107,90 @@
     
         }
     }
+
+    .concat{
+        a{
+            font-size:28px / @size;
+            line-height:118px / @size;
+    
+            &:first-of-type:before, &:last-of-type:before{
+                width:60px / @size;
+                height:60px / @size;
+                background: url(../images/icon.png) no-repeat 0 -40px/@size;
+                background-size:400px / @size;
+                margin:31px / @size 20px/@size 0 13px / @size;
+            }
+            
+            &:first-of-type{
+                padding-right:64px/ @size;
+            }
+    
+            &:last-of-type:before{
+                background-position: -60px/@size -40px/@size;
+            }
+        }
+    }
+
+    .skill_bg{
+        padding-top:50px / @size;
+        padding-bottom:70px / @size;
+    }
+    
+    .skill_bg{
+    
+        .title {
+            h2{
+                font-size:48px / @size;
+                line-height:67px / @size;
+            }
+            h4{
+                font-size:26px / @size;
+                line-height:45px / @size;
+            }
+        }
+    
+        .skill_list{
+            padding-top:2px / @size;
+    
+            li{
+                height: 70px / @size;
+                line-height:70px / @size;
+                margin-top:40px / @size;
+    
+                >span{
+                    width:110px / @size;
+                    height:70px / @size;
+                    font-size:36px / @size;
+                }
+    
+                p{
+                    margin-left:110px / @size;
+                    height:70px / @size;
+                    span{
+                        font-size:36px / @size;
+                        padding-left:17px / @size;
+                    }
+                    
+                    em{
+                        height:70px / @size; 
+                    }
+                    
+                }
+            }
+        }
+    }
+
+    .work_line{
+        padding-top:51px / @size;
+        .title {
+            h2{
+                font-size:50px / @size;
+                line-height:66px / @size;
+            }
+            h4{
+                font-size:26px / @size;
+                line-height:43px / @size;
+            }
+        }
+    }
 }

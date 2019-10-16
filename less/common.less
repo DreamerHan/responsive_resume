@@ -20,10 +20,10 @@ input,button{
 a{
     text-decoration: none;
 }
-h1,figure,p{
+h1,h2,h4,figure,p{
     margin:0;
 }
-h1{
+h1,h2,h4{
     font-weight: normal;
 }
 img{
@@ -68,5 +68,30 @@ li{
     .col-@{size}-pull-@{index}{
         position: relative;
         left:-100%/@num * @index;
+    }
+}
+
+/* 颜色函数 */ 
+@color:#e26c60; //设置参考颜色
+.difColor(@index) when(@index > 0){
+    .difColor(@index - 1);
+    //执行spincolor函数
+    @spincolor:spin(@color, (180 - @index*60));
+    //同色系的淡色
+    @lightcolor:lighten(@spincolor, 20%);
+    li:nth-of-type(@{index}){
+        >span{
+            background:@spincolor;
+        }
+    
+        p{
+            span{
+                color:@spincolor;
+            }
+
+            em{
+                background: @lightcolor;
+            }
+        }
     }
 }
