@@ -291,29 +291,48 @@
     padding-top:46px / @size;
     padding-left:29px / @size;
 
+    .work_dian(@c){
+        content : '';
+        position: absolute;
+        width:12px / @size; height:12px / @size;
+        background: @c;
+        border-radius: 50%;
+    }
+
     li{
+
+        &:first-of-type{
+            h2{
+                &:before{
+                    .work_dian(#e26e60);
+                    left:-7px / @size;
+                    top:-6px / @size;
+                }
+            }
+        }
+
+        &:last-of-type{
+            .content{
+                position: relative;
+                &:before{
+                    content : '';
+                    width:12px / @size; height:12px/ @size;
+                    border-radius: 50%;
+                    position: absolute;
+                    left:-7px / @size;
+                    bottom:0;
+                }
+            }
+        }
+
         h2{
             font-family : "微软雅黑";
-            color:#e26e60;
+            
             height:72px / @size;
-            border-bottom:2px / @size solid #e26c60;
-            border-left:2px / @size solid #e26c60;
             position: relative;
 
-            &:before, &:after{
-                content : '';
-                position: absolute;
-                width:12px / @size; height:12px / @size;
-                background: #e26c60;
-                border-radius: 50%;
-                
-            }
-            &:before{
-                left:-7px / @size;
-                top:-6px / @size;
-            }
             &:after{
-                right:0; bottom:-7px/@size; 
+                right:0; bottom:-7px/@size;
             }
 
             span{
@@ -334,13 +353,14 @@
             }
 
             em{
+                position: relative;
+                z-index:2;
                 float:left;
                 background:#fff;
                 margin-left:-42px / @size;
                 margin-top:34px / @size;
                 padding:8px / @size;
                 border:2px / @size solid transparent;
-                border-top:2px / @size solid #e26c60;
                 transform: rotate(45deg);
                 border-radius: 50%;
                 &:before{
@@ -350,15 +370,71 @@
                     height:60px / @size;
                     background:url(../images/icon.png) no-repeat 0 -254px/@size;
                     background-size:400px / @size;
+                    transform: rotate(-45deg);
                 }
             }
         }
     }
+
+    li:nth-of-type(odd){
+        h2{
+            border-bottom:2px / @size solid #e26c60;
+            border-left:2px / @size solid #e26c60;
+            color:#e26e60;
+            &:after{
+                .work_dian(#e26e60);
+            }
+
+            em{
+                border-top:2px / @size solid #e26c60;
+            }
+        }
+
+        .content{
+            border-left:2px / @size solid #985a99;
+            &:before{
+                background:#985a99;
+            }
+            h4{
+                &:before{
+                    background:#985a99;
+                }
+            }
+        }
+    }
+    li:nth-of-type(even){
+        h2{
+            border-bottom:2px / @size solid #985a99;
+            border-left:2px / @size solid #985a99;
+            color:#985a99;
+            &:after{
+                .work_dian(#985a99);
+            }
+
+            em{
+                border-top:2px / @size solid #985a99;
+            }
+        }
+
+        .content{
+            border-left:2px / @size solid #e26e60;
+            &:before{
+                background:#e26e60;
+            }
+
+            h4{
+                &:before{
+                    background:#e26e60;
+                }
+            }
+        }
+    }
+
+    .emBg(3, 60px, @size);
 }
 
 .content{
     padding-left:37px / @size;
-    border-left:2px / @size solid #985a99;
 
     h4{
         font-size:32px / @size;
@@ -372,10 +448,10 @@
             position: absolute;
             width:12px / @size;
             height:12px / @size;
-            background:#985a99;
             border-radius:50%;
             left:-44px / @size;
             top:37px / @size;
+            z-index:3;
         }
     }
     p{

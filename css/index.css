@@ -55,6 +55,7 @@ li {
 /* @index 执行多少次， @num 分成多少格子， @size 屏幕的尺寸，默认是xs */
 /* 列排序 */
 /* 颜色函数 */
+/* work em bg */
 /* --------------- xs尺寸样式 -------------- */
 .col-xs-1 {
   width: 7.69230769%;
@@ -446,26 +447,32 @@ li {
   padding-top: 23px;
   padding-left: 14.5px;
 }
-.work_list li h2 {
-  font-family: "微软雅黑";
-  color: #e26e60;
-  height: 36px;
-  border-bottom: 1px solid #e26c60;
-  border-left: 1px solid #e26c60;
-  position: relative;
-}
-.work_list li h2:before,
-.work_list li h2:after {
+.work_list li:first-of-type h2:before {
   content: '';
   position: absolute;
   width: 6px;
   height: 6px;
-  background: #e26c60;
+  background: #e26e60;
   border-radius: 50%;
-}
-.work_list li h2:before {
   left: -3.5px;
   top: -3px;
+}
+.work_list li:last-of-type .content {
+  position: relative;
+}
+.work_list li:last-of-type .content:before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  position: absolute;
+  left: -3.5px;
+  bottom: 0;
+}
+.work_list li h2 {
+  font-family: "微软雅黑";
+  height: 36px;
+  position: relative;
 }
 .work_list li h2:after {
   right: 0;
@@ -486,13 +493,14 @@ li {
   padding-right: 15px;
 }
 .work_list li h2 em {
+  position: relative;
+  z-index: 2;
   float: left;
   background: #fff;
   margin-left: -21px;
   margin-top: 17px;
   padding: 4px;
   border: 1px solid transparent;
-  border-top: 1px solid #e26c60;
   transform: rotate(45deg);
   border-radius: 50%;
 }
@@ -503,10 +511,69 @@ li {
   height: 30px;
   background: url(../images/icon.png) no-repeat 0 -127px;
   background-size: 200px;
+  transform: rotate(-45deg);
+}
+.work_list li:nth-of-type(odd) h2 {
+  border-bottom: 1px solid #e26c60;
+  border-left: 1px solid #e26c60;
+  color: #e26e60;
+}
+.work_list li:nth-of-type(odd) h2:after {
+  content: '';
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: #e26e60;
+  border-radius: 50%;
+}
+.work_list li:nth-of-type(odd) h2 em {
+  border-top: 1px solid #e26c60;
+}
+.work_list li:nth-of-type(odd) .content {
+  border-left: 1px solid #985a99;
+}
+.work_list li:nth-of-type(odd) .content:before {
+  background: #985a99;
+}
+.work_list li:nth-of-type(odd) .content h4:before {
+  background: #985a99;
+}
+.work_list li:nth-of-type(even) h2 {
+  border-bottom: 1px solid #985a99;
+  border-left: 1px solid #985a99;
+  color: #985a99;
+}
+.work_list li:nth-of-type(even) h2:after {
+  content: '';
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: #985a99;
+  border-radius: 50%;
+}
+.work_list li:nth-of-type(even) h2 em {
+  border-top: 1px solid #985a99;
+}
+.work_list li:nth-of-type(even) .content {
+  border-left: 1px solid #e26e60;
+}
+.work_list li:nth-of-type(even) .content:before {
+  background: #e26e60;
+}
+.work_list li:nth-of-type(even) .content h4:before {
+  background: #e26e60;
+}
+.work_list li:nth-of-type( 1) h2 em:before {
+  background-position: 0px -127px;
+}
+.work_list li:nth-of-type( 2) h2 em:before {
+  background-position: -30px -127px;
+}
+.work_list li:nth-of-type( 3) h2 em:before {
+  background-position: -60px -127px;
 }
 .content {
   padding-left: 18.5px;
-  border-left: 1px solid #985a99;
 }
 .content h4 {
   font-size: 16px;
@@ -520,10 +587,10 @@ li {
   position: absolute;
   width: 6px;
   height: 6px;
-  background: #985a99;
   border-radius: 50%;
   left: -22px;
   top: 18.5px;
+  z-index: 3;
 }
 .content p {
   color: #999;

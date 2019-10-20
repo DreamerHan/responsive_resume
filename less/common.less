@@ -95,3 +95,19 @@ li{
         }
     }
 }
+
+/* work em bg */
+//@w 每个图片的宽度   @index 执行多少次  @size 要除以的比例 
+.emBg(@index, @w, @size) when (@index > 0){
+    .emBg(@index - 1, @w, @size);
+    li:nth-of-type(@{index}){
+        h2{
+            em{
+                &:before{
+                    background-position: -(@index - 1) * @w / @size -254px / @size;
+                }
+            }
+        }
+    }
+
+}
