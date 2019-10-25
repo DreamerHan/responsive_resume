@@ -1,4 +1,4 @@
-/* --------------- 移动端默认样式 -------------- */ 
+/* 移动端默认样式 */
 body{
     margin:0;
 }
@@ -15,99 +15,112 @@ input,button{
     border-radius:0;
     -webkit-appearance: none;
 }
-
-/* --------------- PC端默认样式 -------------- */
+/* PC端默认样式 */ 
 a{
     text-decoration: none;
 }
-h1,h2,h4,figure,p{
+
+h1,h2,h3,h4,figure,p{
     margin:0;
 }
-h1,h2,h4{
+
+h1,h2,h3,h4{
     font-weight: normal;
 }
+
 img{
     vertical-align: top;
     border:none;
 }
 ul{
     margin:0; padding:0;
+    list-style:none;
 }
-li{
-    list-style: none;
+em{
+    font-style: normal;
 }
 
-/* --------------- 公用class -------------- */
+
+/* 公共样式 */ 
 .clearfix:after{
     content : '';
-    display:block;
-    clear:both;
-} 
+    display: block;
+    clear: both;
+}
 .clearfix{
     zoom:1;
 }
 
-/* ------------------ 栅格类 ------------------ */ 
+/* 动态栅格 */ 
+
 /* @index 执行多少次， @num 分成多少格子， @size 屏幕的尺寸，默认是xs */ 
-.col(@index, @num, @size:xs) when (@index > 0) {
-    .col(@index - 1, @num, @size);
+.col-size-num(@index, @num, @size:xs) when (@index > 0){
+    .col-size-num(@index - 1, @num, @size);
     .col-@{size}-@{index}{
-        width:100% / @num * @index;
+        width: 100% / @num * @index;
         float:left;
     }
 }
 
-/* 列排序 */ 
-.col-push(@index, @size, @num) when (@index > 0){
-    .col-push(@index - 1, @size, @num);
+/* 栅格移动 */
+/* @index 执行到了第多少次， @num 总共能移动多少位置， @size 屏幕尺寸 */ 
+.col-move(@index, @num, @size) when (@index > 0) {
+    .col-move(@index - 1, @num, @size);
+
     .col-@{size}-push-@{index}{
         position: relative;
-        left:100%/@num * @index;
+        left : 100% / @num * @index; 
     }
 
     .col-@{size}-pull-@{index}{
         position: relative;
-        left:-100%/@num * @index;
+        left : -100% / @num * @index;
     }
 }
 
-/* 颜色函数 */ 
-@color:#e26c60; //设置参考颜色
-.difColor(@index) when(@index > 0){
-    .difColor(@index - 1);
+
+/* 颜色函数 */
+@color : #e26c60; //设置参考颜色
+/* index 表示执行多少次 */ 
+.skill-dif-color(@index) when (@index > 0){
+
+    .skill-dif-color(@index - 1);
+
     //执行spincolor函数
-    @spincolor:spin(@color, (180 - @index*60));
-    //同色系的淡色
-    @lightcolor:lighten(@spincolor, 20%);
+    @spincolor:spin(@color, (260 - @index*60));
+
+    //获取同色系的浅颜色
+    @lightColor:lighten(@spincolor, 20%);
+
     li:nth-of-type(@{index}){
-        >span{
+        .left{
             background:@spincolor;
         }
-    
-        p{
+        .right{
             span{
                 color:@spincolor;
             }
-
+            
             em{
-                background: @lightcolor;
+                background:@lightColor;
             }
         }
     }
+
 }
 
-/* work em bg */
-//@w 每个图片的宽度   @index 执行多少次  @size 要除以的比例 
-.emBg(@index, @w, @size) when (@index > 0){
-    .emBg(@index - 1, @w, @size);
+
+/* 工作时光轴em图标 */
+.work_em_bg(@index, @width, @size) when(@index > 0){
+    .work_em_bg(@index - 1, @width, @size);
+
     li:nth-of-type(@{index}){
         h2{
-            em{
+            .icon{
                 &:before{
-                    background-position: -(@index - 1) * @w / @size -254px / @size;
+                    background-position:-(@index - 1) * @width / @size -254px / @size;
                 }
-            }
+           }
         }
     }
-
-}
+} 

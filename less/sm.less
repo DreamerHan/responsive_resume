@@ -1,111 +1,101 @@
-/* --------------- ms尺寸样式 -------------- */
-
+/* ------------ sm ------------ */ 
 @media all and (min-width:768px) {
-    @size : 1;
-    .nav{
-        height:86px / @size;
-        border-bottom:2px / @size solid #16161a;
-
-        h1{
-            display:none;
-        }
-
-        .arrow{
-            width:38px / @size;
-            height:40px / @size;
-            margin:20px / @size 0 0 24px / @size;
-        }
-    }
-    .container{
-        padding:0 50px / @size;
-    }
-    .self_pic{
-        padding-bottom:40px / @size;
     
-        .self_pic_box{
-            padding:53px / @size 0 0 24px / @size;
-            
+    @size : 1;
+
+    .container{
+        padding:0 50px/@size;
+    }
+
+    .nav{
+        width:100%; height:86px / @size;
+        border-bottom:2px / @size solid #16161a;
+        
+        .arrow{
+            width:38px / @size; height:40px / @size;
+            background-size:400px / @size;
+            margin:24px/@size 0 0 20px/@size;
+        }   
+    }
+
+    .self_pic{
+        padding-bottom:40px/@size;
+        
+        .self_pic_img{
+            padding-top:53px/@size;
+            padding-left:24px/@size;
+    
             img{
-                // 这里的宽高设置成正常的就行，小屏幕下为了适配图片宽度超过父级做了处理
-                width:200px; height:200px;
-                border-radius: 50%;
-                border:3px / @size solid #e16b5f;
+                width:200px / @size; height:200px / @size;
             }
         }
-    
+        
         figcaption{
             h1{
                 font-size:48px / @size;
-                padding-left:24px / @size;
-                padding-top:81px / @size;
                 line-height:78px / @size;
+                padding-left:24px/ @size;
+                padding-top:81px/@size;
+    
                 span{
-                    display: block;
-                    font-size:32px / @size;
-                    line-height:61px / @size;
+                    font-size:30px/@size;
+                    line-height:58px/ @size;
                 }
             }
         }
+    
     }
 
     .self_sign{
-        font-size:26px / @size;
+        font-size:24px / @size;
         line-height:40px / @size;
-        padding:42px/@size 34px/@size 30px / @size 69px/@size;
+        padding:42px/@size 28px/@size 30px / @size 69px/@size;
+        position: relative;
     
         &:before, &:after{
-            width: 26px / @size;
-            height: 26px / @size;
-            background:url(../images/icon.png) no-repeat -38px/@size 0;
+            width:26px / @size; height:26px / @size;
+            background:url(../images/icon.png) no-repeat -38px / @size 0;
             background-size:400px / @size;
-            left:27px / @size;
-            top: 46px / @size;
+            left:27px / @size; top:46px/ @size;   
         }
     
         &:after{
-            background-position: -64px / @size 0;
-            margin-top:9px / @size;
-            margin-left:52px / @size;
+            background-position:-64px/ @size 0;
+            margin-top:10px/@size;
+            margin-left:53px/@size;
         }
     }
 
     .self_message{
-        padding-top:38px / @size;
+        padding-top:38px/@size;
+    }
     
-        .self_list{
+    .self_message_list{
     
-            li{
-                font-size:28px / @size;
-                line-height:73px / @size;
+        li{
+            font-size:26px / @size;
+            line-height:72px / @size;
     
-                span{
-                    width:132px / @size;
-                    padding-right:18px / @size;
-                    // 点球是相对于span对齐的，所以作为span的伪类处理
-                    &:after{
-                        width:18px / @size;
-                        height:18px / @size;
-                        top:28px / @size;
-                        right:-10px / @size;
-                        z-index:2;
-                    }
-                    
-                }
-                p{
-                    margin-left:132px / @size;
-                    line-height:48px / @size;
-                    padding:(73px - 48px) / @size / 2 0; //处理Li设置了整体行高比p行高大导致span内容和p不对齐的问题
-                    padding-left:22px / @size;
-                }
-                
-                &:last-of-type{
-                    p:before{
-                        height:26px / @size; //解决最后一个p因为内容过高导致50%的长度又超出了点球的定位高度，所以给一个固定高
-                    }
+            span{
+                width:132px / @size;
+                padding-right:21px / @size;
+    
+                &:after{
+                    right:-10px/ @size; top:28px/@size;
+                    z-index:2;
+                    width:18px / @size;
+                    height:18px / @size;
                 }
             }
+            p{
+                line-height:48px / @size;
+                padding: (72px - 48px)/2/@size 0;
+                padding-left:22px;
+                margin-left:132px / @size;
     
+            }
         }
+    
     }
 
     .concat{
@@ -114,6 +104,7 @@
             line-height:118px / @size;
     
             &:first-of-type:before, &:last-of-type:before{
+                
                 width:60px / @size;
                 height:60px / @size;
                 background: url(../images/icon.png) no-repeat 0 -40px/@size;
@@ -131,66 +122,245 @@
         }
     }
 
+    
     .skill_bg{
         padding-top:50px / @size;
+    }
+
+    .title{
+        h2{
+            font-size:48px / @size;
+            line-height:67px / @size;
+        }
+
+        p{
+            font-size:26px / @size;
+            line-height:45px / @size;
+        }
+    }
+
+    .skill_list{
+        padding-top:2px / @size;
         padding-bottom:70px / @size;
+
+        li{
+            height:70px / @size;
+            line-height:70px / @size;
+            margin-top:40px / @size;
+
+            .left{
+                width:110px / @size; height:70px / @size;
+                font-size:30px / @size;;
+            }
+
+            .right{
+                margin-left:110px / @size;
+                height: 70px;
+
+                span{
+                    z-index:2;
+                    padding-left:17px / @size;
+                    font-size:30px / @size;
+                }
+                
+                em{
+                    width:10%;
+                    height:70px / @size;
+                }
+            }
+        }
     }
     
-    .skill_bg{
+    .work_line{
+        padding-top:51px / @size;
+    }
     
-        .title {
+    .work_line{
+        .title{
             h2{
-                font-size:48px / @size;
-                line-height:67px / @size;
+                line-height:66px / @size;
             }
-            h4{
-                font-size:26px / @size;
-                line-height:45px / @size;
+            p {
+                line-height:44px / @size;
+            }   
+        }
+    }
+
+    .work_history{
+        padding-top:51px / @size;
+        padding-bottom:48px / @size;
+        .work_dian(@color){
+            width:12px / @size; height:12px / @size;
+        }
+        li{
+            &:first-of-type{
+                h2{
+                    &:before{
+                        .work_dian(#e26c60);
+                        top:0;
+                        left:-7px / @size;
+                    }    
+                }
+            }
+    
+            h2{
+                height:72px / @size;
+                position: relative;
+                
+                &:after{
+                    .work_dian(#e26c60);
+                    right:0; 
+                    bottom:-7px / @size;
+                }
+                
+                .time{
+                    font-size:24px / @size;
+                    line-height:56px / @size;
+                    padding-top:16px / @size;
+                    text-indent: 52px / @size;
+                }
+                .position{
+                    font-size:30px / @size;
+                    line-height:62px / @size;
+                    padding-top:10px / @size;
+                    padding-right:28px / @size;
+                }
+    
+                .icon{
+                    border:2px / @size solid transparent;
+                    padding:8px / @size;
+                    margin:34px/@size 0 0 -40px/@size;
+                    background-clip: padding-box;
+    
+                    &:before{
+                        width:60px / @size; height:60px / @size;
+                        background:url(../images/icon.png) no-repeat 0 -254px / @size;
+                        background-size:400px / @size;
+                    }
+                }
+            }
+    
+            .content{
+                padding-left:36px / @size;
+                padding-top:12px / @size;
+    
+                &:before{
+                    width:12px / @size; height:12px/ @size;
+                    left:-7px/@size; top:37px/@size;
+                }
+    
+                h4{
+                    font-size:32px / @size;
+                    line-height:64px / @size;
+                }
+                p{
+                    font-size:24px / @size;
+                    line-height:48px / @size;
+                }
+            }
+    
+            &:last-of-type{
+                .content{
+                    p{
+                        &:before{                            
+                            width:12px / @size; height:12px/ @size;
+                            left:-7px / @size;
+                            bottom:0;
+                        }
+                    }
+                }
+            }
+        }
+        .work_em_bg(3, 60px, @size);
+    
+        li:nth-of-type(odd){
+            h2{
+                border-bottom:2px / @size solid #e26c60;
+                border-left:2px / @size solid #e26c60;
+                color:#e26c60;
+    
+                &:after{
+                    .work_dian(#e26c60);
+                }
+    
+                .icon{
+                    border-top:2px /@size solid #e26c60;
+                }
+            }
+            .content{
+                border-left:2px / @size solid #985a99;
             }
         }
     
-        .skill_list{
-            padding-top:2px / @size;
+        li:nth-of-type(even){
+            h2{
+                border-bottom:2px / @size solid #985a99;
+                border-left:2px / @size solid #985a99;
     
-            li{
-                height: 70px / @size;
-                line-height:70px / @size;
-                margin-top:40px / @size;
-    
-                >span{
-                    width:110px / @size;
-                    height:70px / @size;
-                    font-size:36px / @size;
+                &:after{
+                    .work_dian(#985a99);
                 }
     
-                p{
-                    margin-left:110px / @size;
-                    height:70px / @size;
-                    span{
-                        font-size:36px / @size;
-                        padding-left:17px / @size;
-                    }
-                    
-                    em{
-                        height:70px / @size; 
-                    }
-                    
+                .icon{
+                    border-top:2px /@size solid #985a99;
                 }
+            }
+            .content{
+                border-left:2px / @size solid #e26c60;
             }
         }
     }
 
-    .work_line{
-        padding-top:51px / @size;
-        .title {
-            h2{
-                font-size:50px / @size;
-                line-height:66px / @size;
-            }
-            h4{
-                font-size:26px / @size;
-                line-height:43px / @size;
-            }
+    .case_bg{
+        padding-top:58px / @size;
+        border-top:1px solid #edecee;
+    
+        .title{
+            font-size:48px / @size;
+            line-height:68px / @size;
         }
+    }
+    
+    .case_list{
+        padding-top:32px / @size;
+        padding-bottom:60px/@size;
+    
+        .list_item{
+            margin-top:8px/@size;
+    
+            h3{
+                font-size:36px/@size;
+                height:100px / @size;
+                line-height:100px / @size;
+    
+                &:before{
+                    width:40px/@size; height:40px/@size;
+                    background:url(../images/icon.png) no-repeat -135px / @size 0;
+                    background-size:400px/@size;
+                    margin:31px/@size 41px/@size 0 19px/@size;
+                }
+            }
+    
+            li{
+                height:100px/@size;
+                line-height:100px/@size;
+                font-size:32px/@size;
+                border-bottom:2px/@size solid #eef2f5;
+                text-indent: 28px/@size;
+            }
+    
+            &.opened{
+                h3{
+                    &:before{
+                        background-position:-95px/@size 0;
+                    }
+                }
+                li.chosed{
+                    border-bottom:3px/@size solid #e4877e;
+                }
+            }
+    
+        }
+    
     }
 }

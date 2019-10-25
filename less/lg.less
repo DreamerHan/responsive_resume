@@ -1,53 +1,52 @@
-/* --------------- lg尺寸样式 -------------- */
-@media all and (min-width:1180px) {
+/* ------------- lg尺寸 ------------- */ 
+@media all and (min-width:1180px) { 
     .container{
-        width:1180px;
+        width:1180px; margin:0 auto;
+        padding:0;
     }
-    //分成59份
-    .col(59, 59, lg);
-    .col-push(59, lg, 59);
 
-    .nav{
-        border-bottom:1px solid #37303b;
-    }
+    .col-size-num(59, 59, lg);
+    .col-move(59, 59, lg);
+
     .self_pic{
-    
-        .self_pic_box{
-            
+        
+        .self_pic_img{
+            padding:0;
             img{
                 margin-left:13px;
             }
         }
     }
-    .self_sign{        
+
+    .self_sign{
         padding:0 87px 0 25px;
+        box-sizing: border-box;
+        background:none;
     }
-    .self_message{
-    
-        .self_list{
-    
-            li{    
-                span{
-                    width:134px;
-                }
-                p{
-                    margin-left:134px;
-                    line-height:30px;
-                    padding:0; //处理Li设置了整体行高比p行高大导致span内容和p不对齐的问题
-                    padding-left:12px;
-                }
-                
+
+    .self_message_list{
+        
+        li{
+            span{
+                width:94px;
             }
-    
+            p{
+                color:#b6bbc0;
+                line-height:30px;
+                padding: 0;
+                padding-left:12px;
+                margin-left:94px;
+            }
         }
     }
 
     .concat{
-        padding-right:0px;
+        padding-right:0;
+
         a{
             font-size:14px;
             line-height:90px;
-            
+
             &:first-of-type{
                 padding-right:38px;
             }
@@ -55,49 +54,176 @@
     }
 
     .skill_bg{
-        padding-top:36px;
-        padding-bottom:59px;
+        padding-top:35px;
     }
+
+    .title{
+        h2{
+            font-size:34px;
+            line-height:48px;
+        }
+
+        p{
+            font-size:16px;
+            line-height:28px;
+        }
+    }
+
+    .skill_list{
+        padding-top:22px;
+        padding-bottom:59px;
     
-    .skill_bg{
+        li{
+            height:40px;
+            line-height:40px;
+            margin-top:19px;
     
-        .title {
-            h2{
-                font-size:36px;
-                line-height:46px;
-            }
-            h4{
+            .left{
+                width:59px; height:40px;
                 font-size:16px;
-                line-height:28px;
+            }
+    
+            .right{
+                margin-left:59px;
+                height: 40px;
+    
+                span{
+                    padding-left:9px;
+                    font-size:18px;
+                }
+                
+                em{
+                    width:10%;
+                    height:40px;
+                }
             }
         }
     
-        .skill_list{
-            padding-top:23px;
+        .skill-dif-color(10);
+    }
+
+    .work_line{
+        padding-top:42px;
+    }
     
-            li{
-                height: 40px;
-                line-height:40px;
-                margin-top:19px;
-                position: relative;
-                >span{
-                    width:59px;
-                    height:40px;
-                    font-size:20px;
+    .work_line{
+        .title{
+            p {
+                line-height:30px;
+            }   
+        }
+    }
+
+    .work_history{
+        padding-top:38px;
+        padding-bottom:37px;
+        
+        li{
+            &:first-of-type{
+                h2{
+                    &:before{
+                        top:-5px;
+                        left:-6px;
+                    }    
+                }
+            }
+    
+            h2{
+                height:56px;
+                
+                &:after{
+                    right:0; 
+                    bottom:-6px;
+                }
+                
+                .time{
+                    font-size:16px;
+                    line-height:40px;
+                    padding-top:16px;
+                    text-indent: 59px;
+                }
+                .position{
+                    font-size:16px;
+                    line-height:45px;
+                    padding-top:11px;
+                    padding-right:16px;
+                    transform: translateY(47px);
                 }
     
-                p{
-                    margin-left:59px;
-                    height:40px;
-                    span{
-                        font-size:20px;
-                        padding-left:10px;
+                .icon{
+                    padding:8px;
+                    border:2px solid transparent;
+                    margin:17px 0 0 -40px;
+    
+                    &:before{
+                        width:60px; height:60px;
+                        background-position: 0 -254px;
+                        background-size:400px;
                     }
-                    
-                    em{
-                        height:40px; 
-                    }   
-                }    
+                }
+            }
+    
+            .content{
+    
+                padding-left:57px;
+                padding-top:4px;
+    
+                &:before{
+                    width:10px; height:10px;
+                    left:-45px; top:-11px;
+                }
+    
+                h4{
+                    font-size:18px;
+                    line-height:46px;
+                }
+                p{
+                    font-size:12px;
+                    line-height:24px;
+                }
+            }
+    
+            &:last-of-type{
+                .content{
+                    p{
+                        &:before{
+                            width:10px; height:10px;
+                            left:-6px;
+                            bottom:0;
+                        }
+                    }
+                }
+            }
+        }
+        .work_em_bg(3, 60px, 1);
+    
+        li:nth-of-type(odd){
+            h2{
+                border-bottom:2px solid #e26c60;
+                border-left:2px solid #e26c60;
+    
+                .icon{
+                    border-top:2px solid #e26c60;
+                    border-bottom:2px solid #985a99;
+                }
+            }
+            .content{
+                border-left:2px solid #985a99;
+            }
+        }
+    
+        li:nth-of-type(even){
+            h2{
+                border-bottom:2px solid #985a99;
+                border-left:2px solid #985a99;
+    
+                .icon{
+                    border-top:2px solid #985a99;
+                    border-bottom:2px solid #e26c60;
+                }
+            }
+            .content{
+                border-left:2px solid #e26c60;
             }
         }
     }
