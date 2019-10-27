@@ -555,6 +555,52 @@
             }
         }
 
+        .detail{
+            .intro{
+                font-size:30px/@size;
+                line-height:50px/@size;
+                color:#777879;
+                padding-top:20px/@size;
+                padding-bottom:19px/@size;
+            }
+            img{
+                width:100%;
+                margin-bottom:29px/@size;
+            }
+            .preview{
+                width:100%; height:80px/@size;
+                border:none;
+                background:#985a99;
+                color:#fff;
+            }
+
+            .share{
+                padding:30px/@size 0;
+
+                span{
+                    float:left;
+                    height:70px/@size;
+
+                    &:first-of-type{
+                        color:#777879;
+                        font-size:26px/@size;
+                        line-height:70px/@size;
+                    }
+                    a{  
+                        float:left;
+                        width:70px/@size; height:70px/@size;
+                        margin:0 15px/@size;
+                        background:url(../images/icon.png) no-repeat;
+                        background-size:400px/@size;
+                    
+                        &:last-of-type{
+                            margin-right:0;
+                        }
+                    }
+                }
+            }
+            .case_share(5, 70px, @size);
+        }
     }
 
 
