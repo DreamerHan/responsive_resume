@@ -586,20 +586,22 @@
                         font-size:26px/@size;
                         line-height:70px/@size;
                     }
-                    a{  
+                    .share_icon{  
                         float:left;
                         width:70px/@size; height:70px/@size;
                         margin:0 15px/@size;
                         background:url(../images/icon.png) no-repeat;
                         background-size:400px/@size;
-                    
+                        
+                        .case_share(5, 70px, @size);
                         &:last-of-type{
                             margin-right:0;
                         }
                     }
+                    
                 }
             }
-            .case_share(5, 70px, @size);
+            
         }
     }
 

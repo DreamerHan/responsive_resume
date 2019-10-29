@@ -126,14 +126,10 @@ em{
 } 
 
 /* 案例分享分享图片位置 */ 
-.case_share(@index, @width, @size) when(@index > 0){
-    .case_share(@index - 1, @width, @size);
+.case_share(@index, @width, @size, @left:0, @top:-100px) when(@index > 0){
+    .case_share(@index - 1, @width, @size, @left, @top);
 
-    .share{
-        span{
-            a:nth-of-type(@{index}){
-                background-position: -(@index - 1)*@width/@size -100px/@size;
-            }
-        }
+    &:nth-of-type(@{index}){
+        background-position: -(@index - 1)*@width/@size - @left  @top/@size;
     }
 }

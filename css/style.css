@@ -693,7 +693,7 @@ em {
   font-size: 13px;
   line-height: 35px;
 }
-.case_list_content li .detail .share span a {
+.case_list_content li .detail .share span .share_icon {
   float: left;
   width: 35px;
   height: 35px;
@@ -701,23 +701,23 @@ em {
   background: url(../images/icon.png) no-repeat;
   background-size: 200px;
 }
-.case_list_content li .detail .share span a:last-of-type {
-  margin-right: 0;
-}
-.case_list_content li .detail .share span a:nth-of-type( 1) {
+.case_list_content li .detail .share span .share_icon:nth-of-type( 1) {
   background-position: 0px -50px;
 }
-.case_list_content li .detail .share span a:nth-of-type( 2) {
+.case_list_content li .detail .share span .share_icon:nth-of-type( 2) {
   background-position: -35px -50px;
 }
-.case_list_content li .detail .share span a:nth-of-type( 3) {
+.case_list_content li .detail .share span .share_icon:nth-of-type( 3) {
   background-position: -70px -50px;
 }
-.case_list_content li .detail .share span a:nth-of-type( 4) {
+.case_list_content li .detail .share span .share_icon:nth-of-type( 4) {
   background-position: -105px -50px;
 }
-.case_list_content li .detail .share span a:nth-of-type( 5) {
+.case_list_content li .detail .share span .share_icon:nth-of-type( 5) {
   background-position: -140px -50px;
+}
+.case_list_content li .detail .share span .share_icon:last-of-type {
+  margin-right: 0;
 }
 /* ------------ sm ------------ */
 @media all and (min-width: 768px) {
@@ -1010,6 +1010,69 @@ em {
   }
   .case_list .list_item.opened li.chosed {
     border-bottom: 3px solid #e4877e;
+  }
+  .case_list_content {
+    padding: 0 30px;
+  }
+  .case_list_content li header {
+    height: 134px;
+    padding-top: 17px;
+    padding-bottom: 19px;
+    background: linear-gradient(#ffffff 0, #ffffff 132px, rgba(0, 0, 0, 0) 132px, rgba(0, 0, 0, 0) 134px), repeating-linear-gradient(90deg, #d8d8d8 0, #d8d8d8 4px, #ffffff 4px, #ffffff 6px);
+  }
+  .case_list_content li header h2 {
+    font-size: 34px;
+    line-height: 54px;
+  }
+  .case_list_content li header h3 {
+    font-size: 24px;
+    line-height: 44px;
+  }
+  .case_list_content li .detail .intro {
+    font-size: 30px;
+    line-height: 50px;
+    padding-top: 20px;
+    padding-bottom: 19px;
+  }
+  .case_list_content li .detail img {
+    width: 100%;
+    margin-bottom: 29px;
+  }
+  .case_list_content li .detail .preview {
+    width: 100%;
+    height: 80px;
+  }
+  .case_list_content li .detail .share {
+    padding: 30px 0;
+  }
+  .case_list_content li .detail .share span {
+    height: 70px;
+  }
+  .case_list_content li .detail .share span:first-of-type {
+    color: #777879;
+    font-size: 28px;
+    line-height: 70px;
+  }
+  .case_list_content li .detail .share span .share_icon {
+    width: 70px;
+    height: 70px;
+    margin: 0 15px;
+    background-size: 400px;
+  }
+  .case_list_content li .detail .share span .share_icon:nth-of-type( 1) {
+    background-position: 0px -100px;
+  }
+  .case_list_content li .detail .share span .share_icon:nth-of-type( 2) {
+    background-position: -70px -100px;
+  }
+  .case_list_content li .detail .share span .share_icon:nth-of-type( 3) {
+    background-position: -140px -100px;
+  }
+  .case_list_content li .detail .share span .share_icon:nth-of-type( 4) {
+    background-position: -210px -100px;
+  }
+  .case_list_content li .detail .share span .share_icon:nth-of-type( 5) {
+    background-position: -280px -100px;
   }
 }
 /* ------------- md尺寸 ------------- */
@@ -1669,6 +1732,189 @@ em {
   }
   .work_history li:nth-of-type(even) .content {
     border-left: 2px solid #e26c60;
+  }
+  .case_bg {
+    padding-top: 44px;
+  }
+  .case_bg .title {
+    font-size: 34px;
+    line-height: 46px;
+  }
+  .case_list {
+    float: left;
+    padding-top: 30px;
+    width: 320px;
+  }
+  .case_list .list_item {
+    margin-bottom: 10px;
+  }
+  .case_list .list_item h3 {
+    height: 50px;
+    line-height: 50px;
+    font-size: 18px;
+  }
+  .case_list .list_item h3:before {
+    width: 24px;
+    height: 24px;
+    background: url(../images/icon.png) no-repeat -81px 0;
+    background-size: 240px;
+    margin: 14px 10px 0 10px;
+  }
+  .case_list .list_item ul {
+    background: #fff;
+    padding: 10px 0;
+    border-radius: 0 0 5px 5px;
+    display: none;
+  }
+  .case_list .list_item li {
+    height: 48px;
+    line-height: 48px;
+    font-size: 16px;
+    border-bottom: none;
+    border-left: 3px solid #fff;
+    text-indent: 62px;
+    position: relative;
+    cursor: pointer;
+    background: url(../images/line.png) repeat-y 47px 0;
+  }
+  .case_list .list_item li:before {
+    content: '';
+    width: 8px;
+    height: 8px;
+    background: #acaeaf;
+    border-radius: 50%;
+    position: absolute;
+    left: 44px;
+    top: 20px;
+  }
+  .case_list .list_item li:first-of-type:after,
+  .case_list .list_item li:last-of-type:after {
+    content: '';
+    width: 3px;
+    height: 20px;
+    background: #fff;
+    position: absolute;
+    left: 47px;
+  }
+  .case_list .list_item li:first-of-type:after {
+    top: 0;
+  }
+  .case_list .list_item li:last-of-type:after {
+    bottom: 0;
+  }
+  .case_list .list_item.opened h3:before {
+    background-position: -57px 0;
+  }
+  .case_list .list_item.opened li.chosed {
+    height: 40px;
+    line-height: 40px;
+    border-left: 3px solid #e4877e;
+    border-bottom: none;
+    background: url(../images/line.png) repeat-y 47px 0, #fdf6f5;
+  }
+  .case_list .list_item.opened li.chosed:before {
+    background: #e4877e;
+    top: 16px;
+  }
+  .case_list .list_item.opened li.chosed:first-of-type:after,
+  .case_list .list_item.opened li.chosed:last-of-type:after {
+    background: #fdf6f5;
+    height: 16px;
+  }
+  .case_list_content {
+    float: right;
+    width: 620px;
+    box-sizing: border-box;
+    padding: 0 30px;
+    margin-top: 38px;
+  }
+  .case_list_content li {
+    display: none;
+  }
+  .case_list_content li header {
+    height: 91px;
+    padding-top: 25px;
+    padding-bottom: 16px;
+    background: linear-gradient(#ffffff 0, #ffffff 89px, rgba(0, 0, 0, 0) 89px, rgba(0, 0, 0, 0) 91px), repeating-linear-gradient(90deg, #d8d8d8 0, #d8d8d8 4px, #ffffff 4px, #ffffff 6px);
+  }
+  .case_list_content li header h2 {
+    font-size: 18px;
+    height: 28px;
+    line-height: 28px;
+  }
+  .case_list_content li header h3 {
+    font-size: 12px;
+    height: 22px;
+    line-height: 22px;
+  }
+  .case_list_content li .detail .intro {
+    font-size: 14px;
+    line-height: 34px;
+    padding: 9px 0;
+  }
+  .case_list_content li .detail img {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  .case_list_content li .detail .preview {
+    float: left;
+    width: 160px;
+    height: 40px;
+    background: #e26c60;
+  }
+  .case_list_content li .detail .preview:hover {
+    background: #e6948c;
+  }
+  .case_list_content li .detail .share {
+    float: right;
+    padding: 4px 0 34px 0;
+  }
+  .case_list_content li .detail .share span {
+    float: left;
+    height: 32px;
+  }
+  .case_list_content li .detail .share span:first-of-type {
+    color: #000;
+    font-size: 14px;
+    line-height: 32px;
+  }
+  .case_list_content li .detail .share span .share_icon {
+    width: 32px;
+    height: 32px;
+    margin: 0 0 0 18px;
+    background: url(../images/icon.png) no-repeat;
+    background-size: 400px;
+    transition: .3s;
+  }
+  .case_list_content li .detail .share span .share_icon:nth-of-type( 1) {
+    background-position: -180px 0;
+  }
+  .case_list_content li .detail .share span .share_icon:nth-of-type( 2) {
+    background-position: -212px 0;
+  }
+  .case_list_content li .detail .share span .share_icon:nth-of-type( 3) {
+    background-position: -244px 0;
+  }
+  .case_list_content li .detail .share span .share_icon:nth-of-type( 4) {
+    background-position: -276px 0;
+  }
+  .case_list_content li .detail .share span .share_icon:nth-of-type( 5) {
+    background-position: -308px 0;
+  }
+  .case_list_content li .detail .share span .share_icon:hover:nth-of-type( 1) {
+    background-position: -180px -32px;
+  }
+  .case_list_content li .detail .share span .share_icon:hover:nth-of-type( 2) {
+    background-position: -212px -32px;
+  }
+  .case_list_content li .detail .share span .share_icon:hover:nth-of-type( 3) {
+    background-position: -244px -32px;
+  }
+  .case_list_content li .detail .share span .share_icon:hover:nth-of-type( 4) {
+    background-position: -276px -32px;
+  }
+  .case_list_content li .detail .share span .share_icon:hover:nth-of-type( 5) {
+    background-position: -308px -32px;
   }
 }
 /* ------------- lg尺寸 ------------- */
@@ -2643,5 +2889,19 @@ em {
   }
   .work_history li:nth-of-type(even) .content {
     border-left: 2px solid #e26c60;
+  }
+  .case_bg {
+    padding-top: 45px;
+  }
+  .case_list {
+    padding-top: 30px;
+    width: 360px;
+  }
+  .case_list_content {
+    float: right;
+    width: 800px;
+  }
+  .case_list_content li header {
+    width: 640px;
   }
 }

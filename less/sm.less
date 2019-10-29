@@ -361,6 +361,78 @@
             }
     
         }
-    
     }
+
+    .case_list_content{
+        padding:0 30px / @size;
+
+        li{
+            header{
+                height:134px/@size;
+                padding-top:17px/@size;
+                padding-bottom:19px/@size;
+                background: 
+                    linear-gradient(
+                        #fff 0,
+                        #fff (134px/@size - 2) ,
+                        rgba(0,0,0,0) (134px/@size - 2),
+                        rgba(0,0,0,0) 134px/@size
+                    ),
+                    repeating-linear-gradient(
+                        90deg,
+                        #d8d8d8 0,
+                        #d8d8d8 4px/@size,
+                        #fff 4px/@size,
+                        #fff 6px/@size
+                    );
+                h2{
+                    font-size:34px/@size;
+                    line-height:54px/@size;
+                }
+                h3{
+                    font-size:24px/@size;
+                    line-height:44px/@size;
+                }
+            }
+
+            .detail{
+                .intro{
+                    font-size:30px/@size;
+                    line-height:50px/@size;
+                    padding-top:20px/@size;
+                    padding-bottom:19px/@size;
+                }
+                img{
+                    width:100%;
+                    margin-bottom:29px/@size;
+                }
+                .preview{
+                    width:100%; height:80px/@size;
+                }
+
+                .share{
+                    padding:30px/@size 0;
+
+                    span{
+                        height:70px/@size;
+
+                        &:first-of-type{
+                            color:#777879;
+                            font-size:28px/@size;
+                            line-height:70px/@size;
+                        }
+                        .share_icon{  
+                            width:70px/@size; height:70px/@size;
+                            margin:0 15px/@size;
+                            background-size:400px/@size;
+
+                            .case_share(5, 70px, @size);
+                        }
+                        
+                    }
+                }
+            }
+        }
+    }
+
 }
