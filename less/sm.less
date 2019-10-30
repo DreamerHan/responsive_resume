@@ -340,6 +340,11 @@
                     margin:31px/@size 41px/@size 0 19px/@size;
                 }
             }
+
+            ul{
+                padding:10px / @size 0;
+                border-radius: 0 0 5px /@size 5px/@size;
+            }
     
             li{
                 height:100px/@size;
@@ -364,7 +369,13 @@
     }
 
     .case_list_content{
-        padding:0 30px / @size;
+        left:0; top:0;
+        width:100vw;
+        min-height:100vh;
+        
+        ul{
+            padding:0 30px / @size;
+        }
 
         li{
             header{
@@ -435,4 +446,67 @@
         }
     }
 
+
+    .project_bg{    
+        .title{
+            padding-top:50px/@size;
+            padding-bottom:13px/@size;
+            h2{
+                font-size:48px / @size;
+                line-height:68px/@size;
+            }
+            h3{
+                font-size:24px/@size;
+                line-height:44px/@size;
+            }
+        }
+    }
+    .project_list{
+        li{
+            padding-top:30px/@size;
+            border-bottom:2px/@size solid #e88980;
+    
+            figure{
+                display: flex;
+                
+                img{
+                    width:311px/@size; height:210px/@size;
+                }
+    
+                figcaption {
+                    flex:1;
+                    padding-left:52px/@size;
+                    padding-top:14px/@size;
+    
+                    p{
+                        font-size:30px/@size;
+                        line-height:48px/@size;
+                    }
+    
+                    span{
+                        font-size:20px/@size;
+                        line-height:40px/@size;
+                    }
+                }
+            }
+            .intro{
+                font-size:26px/@size;
+                line-height:36px/@size;
+                padding:39px/@size 0 23px/@size 0;
+            }
+    
+            .btns{
+                padding-bottom:30px/@size;
+                button{
+                    width:130px/@size;
+                    height:46px/@size;
+                    border-radius:4px/@size;
+                    font-size:20px/@size;
+                    line-height:44px/@size;
+                    margin-right:16px/@size;
+                }
+            }
+    
+        }
+    }
 }
