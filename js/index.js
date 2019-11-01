@@ -146,3 +146,14 @@ window.onresize = function() {
         caseListContent.style.transform = `translateX(100vw)`;
     }
 }
+
+
+let goTop = document.querySelector('.goTop')
+
+window.onscroll = function() {
+    goTop.style.display = window.pageYOffset > 260 ? 'block' : 'none'
+}
+
+goTop.onclick = function() {
+    window.scrollTo(0, 0)
+}
