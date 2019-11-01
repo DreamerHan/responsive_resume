@@ -14,7 +14,9 @@
 .xs-hidden{
     display: none;
 }
-
+.xs-show{
+    display: block;
+}
 .nav{
     width:100%; height:86px / @size;
     border-bottom:2px / @size solid #16161a;
@@ -31,7 +33,7 @@
         background: url(../images/icon.png) no-repeat;
         background-size:400px / @size;
         margin:24px/@size 0 0 0;
-        // display:none; //首屏不存在返回箭头，可以直接隐藏
+        display:none; //首屏不存在返回箭头，可以直接隐藏
     } 
 }
 
@@ -540,6 +542,10 @@
         background:#1f2229;
         position: relative;
         z-index:10;
+
+        .arrow{
+            display: inline-block;
+        }
     }
     ul{
         padding:0 30px / @size;
@@ -630,8 +636,6 @@
             
         }
     }
-
-
 }
 
 .project_bg{
@@ -655,7 +659,12 @@
 .project_list{
     li{
         padding-top:30px/@size;
+        padding-bottom:30px/@size;
         border-bottom:2px/@size solid #e88980;
+
+        &:last-of-type{
+            padding-bottom:71px/@size;
+        }
 
         figure{
             display: flex;
@@ -664,23 +673,23 @@
                 width:311px/@size; height:208px/@size;
             }
 
-            figcaption {
-                flex:1;
-                padding-left:52px/@size;
-                padding-top:14px/@size;
+        }
+        .pro_figcaption {
+            flex:1;
+            padding-left:52px/@size;
+            padding-top:14px/@size;
 
-                p{
-                    font-size:30px/@size;
-                    line-height:48px/@size;
-                    color:#fff;
-                }
+            p{
+                font-size:30px/@size;
+                line-height:48px/@size;
+                color:#fff;
+            }
 
-                span{
-                    display: block;
-                    font-size:20px/@size;
-                    line-height:40px/@size;
-                    color:#cfcfcf;
-                }
+            span{
+                display: block;
+                font-size:20px/@size;
+                line-height:40px/@size;
+                color:#cfcfcf;
             }
         }
         .intro{
@@ -691,7 +700,6 @@
         }
 
         .btns{
-            padding-bottom:30px/@size;
             button{
                 width:128px/@size;
                 height:44px/@size;
@@ -705,5 +713,45 @@
             }
         }
 
+    }
+}
+
+.last_upate{
+    height:100px/@size;
+    line-height:100px/@size;
+    font-size:30px/@size;
+    color:#e3d8d7;
+    text-align: center;
+    background:#80312b;
+}
+
+.last_info{
+    background:#eef2f5;
+    padding:43px/@size 0 69px/@size 0;
+    p{
+        margin-bottom:33px/@size;
+        font-size:24px/@size;
+        line-height:48px/@size;
+        text-align: center;
+    }
+
+    .open_way{
+        width:390px/@size; height:340px/@size;
+        box-sizing: border-box;
+        background:#fff;
+        padding:46px/@size 0 22px/@size 0;
+        margin:0 auto;
+        text-align: center;
+        img{
+            width:200px/@size;
+            height:200px/@size;
+        }
+        
+
+        p{
+            display: block;
+            font-size:26px/@size;
+            line-height:72px/@size;
+        }
     }
 }

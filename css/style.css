@@ -125,6 +125,9 @@ em {
 .xs-hidden {
   display: none;
 }
+.xs-show {
+  display: block;
+}
 .nav {
   width: 100%;
   height: 43px;
@@ -142,6 +145,7 @@ em {
   background: url(../images/icon.png) no-repeat;
   background-size: 200px;
   margin: 12px 0 0 0;
+  display: none;
 }
 .self_bg {
   background: rgba(0, 0, 0, 0.2);
@@ -665,6 +669,9 @@ em {
   position: relative;
   z-index: 10;
 }
+.case_list_content .nav .arrow {
+  display: inline-block;
+}
 .case_list_content ul {
   padding: 0 15px;
   position: relative;
@@ -766,7 +773,11 @@ em {
 }
 .project_list li {
   padding-top: 15px;
+  padding-bottom: 15px;
   border-bottom: 1px solid #e88980;
+}
+.project_list li:last-of-type {
+  padding-bottom: 35.5px;
 }
 .project_list li figure {
   display: flex;
@@ -775,17 +786,17 @@ em {
   width: 155.5px;
   height: 104px;
 }
-.project_list li figure figcaption {
+.project_list li .pro_figcaption {
   flex: 1;
   padding-left: 26px;
   padding-top: 7px;
 }
-.project_list li figure figcaption p {
+.project_list li .pro_figcaption p {
   font-size: 15px;
   line-height: 24px;
   color: #fff;
 }
-.project_list li figure figcaption span {
+.project_list li .pro_figcaption span {
   display: block;
   font-size: 10px;
   line-height: 20px;
@@ -797,9 +808,6 @@ em {
   color: #fff;
   padding: 20.5px 0 11.5px 0;
 }
-.project_list li .btns {
-  padding-bottom: 15px;
-}
 .project_list li .btns button {
   width: 64px;
   height: 22px;
@@ -810,6 +818,42 @@ em {
   font-size: 10px;
   line-height: 22px;
   margin-right: 8px;
+}
+.last_upate {
+  height: 50px;
+  line-height: 50px;
+  font-size: 15px;
+  color: #e3d8d7;
+  text-align: center;
+  background: #80312b;
+}
+.last_info {
+  background: #eef2f5;
+  padding: 21.5px 0 34.5px 0;
+}
+.last_info p {
+  margin-bottom: 16.5px;
+  font-size: 12px;
+  line-height: 24px;
+  text-align: center;
+}
+.last_info .open_way {
+  width: 195px;
+  height: 170px;
+  box-sizing: border-box;
+  background: #fff;
+  padding: 23px 0 11px 0;
+  margin: 0 auto;
+  text-align: center;
+}
+.last_info .open_way img {
+  width: 100px;
+  height: 100px;
+}
+.last_info .open_way p {
+  display: block;
+  font-size: 13px;
+  line-height: 36px;
 }
 /* ------------ sm ------------ */
 @media all and (min-width: 768px) {
@@ -1190,6 +1234,7 @@ em {
   }
   .project_list li {
     padding-top: 30px;
+    padding-bottom: 71px;
     border-bottom: 2px solid #e88980;
   }
   .project_list li figure {
@@ -1199,16 +1244,16 @@ em {
     width: 311px;
     height: 210px;
   }
-  .project_list li figure figcaption {
+  .project_list li .pro_figcaption {
     flex: 1;
     padding-left: 52px;
     padding-top: 14px;
   }
-  .project_list li figure figcaption p {
+  .project_list li .pro_figcaption p {
     font-size: 30px;
     line-height: 48px;
   }
-  .project_list li figure figcaption span {
+  .project_list li .pro_figcaption span {
     font-size: 20px;
     line-height: 40px;
   }
@@ -1217,9 +1262,6 @@ em {
     line-height: 36px;
     padding: 39px 0 23px 0;
   }
-  .project_list li .btns {
-    padding-bottom: 30px;
-  }
   .project_list li .btns button {
     width: 130px;
     height: 46px;
@@ -1227,6 +1269,32 @@ em {
     font-size: 20px;
     line-height: 44px;
     margin-right: 16px;
+  }
+  .last_upate {
+    height: 100px;
+    line-height: 100px;
+    font-size: 30px;
+  }
+  .last_info {
+    padding: 43px 0 69px 0;
+  }
+  .last_info p {
+    margin-bottom: 33px;
+    font-size: 26px;
+    line-height: 48px;
+  }
+  .last_info .open_way {
+    width: 400px;
+    height: 340px;
+    padding: 46px 0 22px 0;
+  }
+  .last_info .open_way img {
+    width: 200px;
+    height: 200px;
+  }
+  .last_info .open_way p {
+    font-size: 26px;
+    line-height: 72px;
   }
 }
 /* ------------- md尺寸 ------------- */
@@ -1981,6 +2049,7 @@ em {
     margin-top: 38px;
     transform: translateX(0vw);
     position: static;
+    margin-bottom: 58px;
   }
   .case_list_content ul {
     padding: 0 30px;
@@ -2072,6 +2141,104 @@ em {
   }
   .case_list_content li .detail .share span .share_icon:hover:nth-of-type( 5) {
     background-position: -308px -32px;
+  }
+  .project_bg .title {
+    padding-top: 37px;
+    padding-bottom: 22px;
+  }
+  .project_bg .title h2 {
+    font-size: 34px;
+    line-height: 48px;
+  }
+  .project_bg .title h3 {
+    font-size: 16px;
+    line-height: 30px;
+  }
+  .project_list li {
+    padding-top: 37px;
+    padding-bottom: 37px;
+    border-bottom: 1px solid #e88980;
+  }
+  .project_list li:last-of-type {
+    padding-bottom: 246px;
+  }
+  .project_list li .project_box {
+    display: flex;
+  }
+  .project_list li figure {
+    order: 2;
+  }
+  .project_list li figure img {
+    width: 336px;
+    height: 226px;
+  }
+  .project_list li article {
+    flex: 1;
+    order: 1;
+    padding-right: 73px;
+  }
+  .project_list li article .pro_figcaption {
+    padding: 0;
+  }
+  .project_list li article .pro_figcaption p {
+    font-size: 24px;
+    line-height: 30px;
+  }
+  .project_list li article .pro_figcaption span {
+    display: block;
+    font-size: 14px;
+    line-height: 30px;
+    color: #f6d3d0;
+  }
+  .project_list li .intro {
+    font-size: 14px;
+    line-height: 24px;
+    padding: 15px 0 21px 0;
+  }
+  .project_list li .btns button {
+    width: 80px;
+    height: 28px;
+    color: #985a99;
+    border-radius: 2px;
+    font-size: 12px;
+    line-height: 28px;
+    margin-right: 10px;
+  }
+  .last_info {
+    border-top: 1px solid #bec2c4;
+    padding: 31px 0 43px 0;
+  }
+  .last_info p {
+    margin-bottom: 0;
+    padding-top: 13px;
+    font-size: 14px;
+    line-height: 24px;
+    text-align: left;
+    float: left;
+  }
+  .last_info .open_way {
+    float: right;
+    width: auto;
+    height: auto;
+    background: none;
+    padding: 0;
+    margin: 0 8px 0 0;
+    text-align: left;
+  }
+  .last_info .open_way img {
+    width: 69px;
+    height: 69px;
+    padding: 3px;
+    background: #fff;
+    border-radius: 2px;
+  }
+  .last_info .open_way p {
+    width: 166px;
+    padding: 19px 20px 0 0;
+  }
+  .last_info .open_way p span {
+    font-size: 14px;
+    line-height: 24px;
   }
 }
 /* ------------- lg尺寸 ------------- */
@@ -3060,5 +3227,21 @@ em {
   }
   .case_list_content li header {
     width: 640px;
+  }
+  .project_bg .title {
+    padding-top: 44px;
+  }
+  .project_list li .intro {
+    padding: 15px 0 45px 0;
+  }
+  .last_info {
+    padding: 31px 0 89px 0;
+  }
+  .last_info .open_way {
+    margin: 0 2px 0 0;
+  }
+  .last_info .open_way p {
+    width: 166px;
+    padding: 13px 20px 0 0;
   }
 }
